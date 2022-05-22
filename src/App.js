@@ -1,7 +1,8 @@
 import React, {} from 'react'
 import './App.css'
-import Article from './components/article/article';
-import Navbar from './components/navbar/navbar';
+// import Article from './components/article/article';
+// import Navbar from './components/navbar/navbar';
+import Navbar2 from './components/youtube_projects/navbar';
 
 
 function App() {
@@ -9,8 +10,7 @@ function App() {
   // const [ text,setText ] = useState("asdasd")
   return (
     <div>
-      <Navbar/>
-      <Article />
+      <Navbar2 />
     </div>
   )
 }
