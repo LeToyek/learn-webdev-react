@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
-import TodoList from "./TodoList";
+import React, {} from 'react'
+import './App.css'
+import Article from './components/article/article';
+import Navbar from './components/navbar/navbar';
+
 
 function App() {
   
+  // const [ text,setText ] = useState("asdasd")
   return (
-    <>
-      <TodoList />
-      <input type="text"/>
-      <button>button1</button>
-      <button>login</button>
-      <div>
-        test
-      </div>
-    </>
+    <div>
+      <Navbar/>
+      <Article />
+    </div>
   )
 }
 
