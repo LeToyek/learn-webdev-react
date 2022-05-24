@@ -1,8 +1,9 @@
-import React, {} from 'react'
+import React from 'react'
 import './App.css'
-// import Article from './components/article/article';
-// import Navbar from './components/navbar/navbar';
-import Navbar2 from './components/youtube_projects/navbar';
+import DynamicValues from './components/latian youtube/Dynamic_values'
+import Navbar from './components/navbar/navbar'
+import ClickEvent from './components/latian youtube/Click_event'
+import StateMan from './components/latian youtube/State'
 
 
 function App() {
@@ -10,7 +11,10 @@ function App() {
   // const [ text,setText ] = useState("asdasd")
   return (
     <div>
-      <Navbar2 />
+      <Navbar/>
+      <DynamicValues/>
+      <ClickEvent/>
+      <StateMan/>
     </div>
   )
 }
