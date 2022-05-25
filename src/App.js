@@ -1,20 +1,18 @@
 import React from 'react'
 import './App.css'
-import DynamicValues from './components/latian youtube/Dynamic_values'
-import Navbar from './components/navbar/navbar'
-import ClickEvent from './components/latian youtube/Click_event'
-import StateMan from './components/latian youtube/State'
 
+import Feed from './components/Design/Feed'
+import Navbar from './components/Design/Navbar'
+import Rightbar from './components/Design/Rightbar'
+import Sidebar from './components/Design/Sidebar'
 
 function App() {
-  
-  // const [ text,setText ] = useState("asdasd")
   return (
     <div>
-      <Navbar/>
-      <DynamicValues/>
-      <ClickEvent/>
-      <StateMan/>
+      <Navbar />
+      <Feed />
+      <Rightbar />
+      <Sidebar />
     </div>
   )
 }
