@@ -1,18 +1,13 @@
 import React from 'react'
-import './App.css'
-
-import Feed from './components/Design/Feed'
-import Navbar from './components/Design/Navbar'
-import Rightbar from './components/Design/Rightbar'
-import Sidebar from './components/Design/Sidebar'
+import './App.scss'
+import Main from './components/UI/Main/Main';
+import Navbar from './components/UI/navbar/Navbar'
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Feed />
-      <Rightbar />
-      <Sidebar />
+      <Navbar/>
+      <Main/>
     </div>
   )
 }

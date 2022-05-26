@@ -1,0 +1,32 @@
+.wrapper{
+    background-color: #112B3C;
+    color: #EFEFEF;
+    box-shadow: 1px 1px 10px grey ;
+    .container{
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .8em;
+    }
+    .title{
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+}
+
+
+.menu{
+    display: flex;
+    list-style: none;
+}
+.menu .item >a{
+    color: white;
+    text-decoration: none;
+    margin: 0 .5em;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.menu .item > a:hover{
+    font-weight: bold;
+}
