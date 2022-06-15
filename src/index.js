@@ -1,11 +1,10 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import RestaurantApp from './restaurant/RestaurantApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RestaurantApp />
   </React.StrictMode>
 );
