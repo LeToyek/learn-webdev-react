@@ -5,9 +5,10 @@ import useFetch from "./custom_hook";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.scss";
 import Daftar from "./components/Daftar";
+import CoinDetail from "./components/CoinDetail";
 const RestaurantApp = () => {
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+  const baseUrl = "https://api.coingecko.com/api/v3/coins"
+  const url = baseUrl+ "/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
 
   return (
@@ -23,6 +24,9 @@ const RestaurantApp = () => {
             </Route>
             <Route path="/daftar">
               <Daftar/>
+            </Route>
+            <Route path="/coins/:id">
+              <CoinDetail url={baseUrl}/>
             </Route>
           </Switch>
         </div>
