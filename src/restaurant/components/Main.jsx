@@ -1,7 +1,6 @@
 import React from 'react'
 import Coin from './Coin'
 const Main = ({coins}) => {
-  console.log(coins)
   return (
     <div className='main'>
       {coins && coins.map(c => <Coin key={c.id} id={c.id} {...c} />)}
