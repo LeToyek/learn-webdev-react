@@ -50,3 +50,28 @@
         }
     }
 }
+.navbar{
+    padding: 12px 24px;
+    height: 60px;
+    background-color: green;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    .menu{
+        list-style: none;
+        display: flex;
+        li{
+            padding-left: 24px;
+            list-style-type: none;
+            cursor: pointer;
+            a{
+                color: white;
+                text-decoration: none;
+                transition: .6s ease;
+                &:hover{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
