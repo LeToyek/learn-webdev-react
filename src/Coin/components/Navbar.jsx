@@ -14,14 +14,11 @@ const Navbar = () => {
             <Link to="/menu">Menu</Link>
           </li>
           <li>
-            <Link to="/CreateCoin">CreateCoin</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="daftar">
-              <div>Daftar</div>
+            <Link to="register">
+              <div>Register</div>
             </Link>
           </li>
         </ul>
