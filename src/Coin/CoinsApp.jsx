@@ -26,10 +26,8 @@ const RestaurantApp = () => {
               <Main coins={coins} />
             </Route>
             <Route path="/register">
-              {" "}
               <Register />
             </Route>
-
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
             </Route>
