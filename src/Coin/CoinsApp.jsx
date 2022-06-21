@@ -17,16 +17,16 @@ const RestaurantApp = () => {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+      <Navbar />
         <div className="content">
           <Switch>
+            <Route path="/register">
+              <Register />
+            </Route>
             <Route exact path="/">
               {err && <div>{err}</div>}
               {isPending && <div>Loading.....</div>}
               <Main coins={coins} />
-            </Route>
-            <Route path="/register">
-              <Register />
             </Route>
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
