@@ -14,7 +14,7 @@ const Coin = ({
     Math.round((price_change_percentage_24h + Number.EPSILON) * 100) / 100;
   return (
     <div className="coin">
-      <Link to={`/coins/${id}`}>
+      <Link to={`/coins/${id}`} style={{ textDecoration: 'none' , color: 'black'}}>
         <div className="container">
           <div className="title">
             <h1>{name}</h1>

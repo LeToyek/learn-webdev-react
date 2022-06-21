@@ -6,9 +6,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.scss";
 import Daftar from "./components/Daftar";
 import CoinDetail from "./components/CoinDetail";
+import CreateCoin from "./components/CreateCoin"
+
+
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins"
-  const url = baseUrl+ "/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+  const url = baseUrl+ "/markets?vs_currency=INR&order=market_cap_desc&per_page=10&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
 
   return (
@@ -27,6 +30,9 @@ const RestaurantApp = () => {
             </Route>
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl}/>
+            </Route>
+            <Route path="/createCoin">
+              <CreateCoin/>
             </Route>
           </Switch>
         </div>
