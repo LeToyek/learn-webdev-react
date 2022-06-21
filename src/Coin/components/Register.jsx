@@ -20,7 +20,6 @@ const Register = () => {
           </div>
           <h2>Register</h2>
           <form onSubmit={addUser}>
-
             <input
               type="text"
               placeholder="Full name"

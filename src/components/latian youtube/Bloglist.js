@@ -1,9 +1,6 @@
 import React from 'react'
 
 export default function Bloglist({blogs,example,handleDelete,handleAdd}) {
-    // (prop)
-    // const blogs = prop.blogs
-    // const example = prop.example
     const newBlogTest = {
         title: 'Toyek testing', body: "lorem ipsum..", id :4
     }

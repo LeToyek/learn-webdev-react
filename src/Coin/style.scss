@@ -73,8 +73,12 @@
                     font-weight: bold;
                 }
             }
+            
         }
     }
+}
+.navbar a:active{
+    background-color: red;
 }
 .Register{
     height: 100vh;
