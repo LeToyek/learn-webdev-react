@@ -12,7 +12,7 @@ const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
   const url =
     baseUrl +
-    "/markets?vs_currency=INR&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+    "/markets?vs_currency=IDR&order=market_cap_desc&per_page=10&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
   return (
     <Router>

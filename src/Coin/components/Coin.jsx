@@ -21,7 +21,7 @@ const Coin = ({
             <img src={image} alt="" />
           </div>
           <div className="data">
-            <p className="price">Rs.{current_price}</p>
+            <p className="price">Rp.{current_price}</p>
             {price_change_percentage_24h > 0 ? (
               <p className="coin-green">+{priceChange}%</p>
             ) : (
