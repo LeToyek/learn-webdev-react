@@ -12,17 +12,19 @@ const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
   const url =
     baseUrl +
-    "/markets?vs_currency=IDR&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+    "/markets?vs_currency=IDR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
   return (
     <Router>
       <div className="App">
-      <Navbar />
+      
         <div className="content">
           <Switch>
             <Route path="/register">
               <Register />
             </Route>
+            <div className="inside">
+            <Navbar />
             <Route exact path="/">
               {err && <div>{err}</div>}
               {isPending && <div>Loading.....</div>}
@@ -31,6 +33,8 @@ const RestaurantApp = () => {
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
             </Route>
+            </div>
+            
           </Switch>
         </div>
       </div>
