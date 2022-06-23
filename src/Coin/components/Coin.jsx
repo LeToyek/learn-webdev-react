@@ -14,7 +14,10 @@ const Coin = ({
     Math.round((price_change_percentage_24h + Number.EPSILON) * 100) / 100;
   return (
     <div className="coin">
-      <Link to={`/coins/${id}`} style={{ textDecoration: 'none' , color: 'black'}}>
+      <Link
+        to={`/coins/${id}`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
         <div className="container">
           <div className="title">
             <h1>{name}</h1>
@@ -22,13 +25,16 @@ const Coin = ({
           </div>
           <div className="data">
             <p className="price">Rp.{current_price}</p>
-            {price_change_percentage_24h > 0 ? (
-              <p className="coin-green">+{priceChange}%</p>
-            ) : (
-              <p className="coin-red">{priceChange}%</p>
-            )}
+            <div className="percentage">
+              {priceChange > 0 ? (
+                <p className="coin-green">+{priceChange}%</p>
+              ) : (
+                <p className="coin-red">{priceChange}%</p>
+              )}
+            </div>
+            
             <p className="marketcap">{market_cap}</p>
-            {market_cap_rank}
+            <div className="rank">{market_cap_rank}</div>
           </div>
         </div>
       </Link>

@@ -5,6 +5,38 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.head {
+  display: flex;
+  justify-content: center;
+  .wrapper {
+    text-align: center;
+    display: flex;
+    width: 900px;
+    .name {
+      min-width: 300px;
+      padding: 0px 24px;
+    }
+    .detail {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      .price {
+        flex: 3;
+      }
+      .percentage {
+        flex: 5;
+
+      }
+      .marketcap {
+        flex: 5;
+      }
+      .rank {
+        flex: 2;
+      }
+    }
+  }
+}
 .coin {
   display: flex;
   justify-content: center;
@@ -16,12 +48,12 @@ body {
     height: 80px;
     border-bottom: 1px solid #d7d7d7;
     width: 900px;
-
     .title {
       display: flex;
       align-items: center;
       padding: 24px;
       min-width: 300px;
+
       h1 {
         font-size: 16px;
         width: 150px;
@@ -38,16 +70,23 @@ body {
       justify-content: space-between;
       width: 100%;
       .price {
-        width: 110px;
+        flex: 3;
       }
       .marketcap {
-        width: 155px;
+        flex: 5;
       }
-      .coin-red {
-        color: red;
+      .percentage {
+        flex: 5;
+        .coin-red {
+          color: red;
+        }
+        .coin-green {
+          color: green;
+        }
       }
-      .coin-green {
-        color: green;
+
+      .rank {
+        flex: 2;
       }
     }
   }
@@ -171,7 +210,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        h2{
+        h2 {
           font-size: 60px;
         }
         .detail {
