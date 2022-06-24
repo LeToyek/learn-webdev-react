@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import LineChart from "../Chart/LineChart";
 import useFetch from "../custom_hook";
 
 const CoinDetail = ({ url }) => {
   const { id } = useParams();
+  const {data: chartData} = useFetch(url + `/${id}/market_chart?vs_currency=IDR&days=1`)
   const { data: coin, isPending, err } = useFetch(url + `/${id}`);
   const detail = coin && coin.market_data;
   const percentage =
@@ -18,13 +20,13 @@ const CoinDetail = ({ url }) => {
       (detail.price_change_24h_in_currency.idr + Number.EPSILON) * 100
     ) / 100;
 
-  console.log(typeof(priceChange));
   return (
     <div>
       {isPending && <div>Loading....</div>}
       {err && <div>{err}</div>}
       {coin && (
         <div className="detail">
+          <LineChart chartData={chartData}/>
           <div className="wrapper">
             <div className="left">
               <img src={coin.image.large} alt="coin-img" />
