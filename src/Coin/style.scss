@@ -26,7 +26,6 @@ body {
       }
       .percentage {
         flex: 5;
-
       }
       .marketcap {
         flex: 5;
@@ -93,7 +92,6 @@ body {
 }
 .navbar {
   padding: 12px 24px;
-  height: 60px;
   background-color: green;
   align-items: center;
   display: flex;
@@ -258,6 +256,29 @@ body {
             rgba(255, 78, 78, 1) 78.3%
           );
         }
+      }
+    }
+  }
+}
+.time {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .density {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    button {
+      padding: 12px 0px;
+      width: 80px;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      background-color: #3a4750;
+      transition: .2s ease;
+      &:hover{
+        background-color: #9EB23B;
       }
     }
   }

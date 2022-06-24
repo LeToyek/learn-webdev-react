@@ -1,11 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import LineChart from "../Chart/LineChart";
+import ButtonTime from "../components/ButtonTime";
 import useFetch from "../custom_hook";
 
 const CoinDetail = ({ url }) => {
   const { id } = useParams();
-  const {data: chartData} = useFetch(url + `/${id}/market_chart?vs_currency=IDR&days=1`)
+  const [day, setDay] = useState(30)
+  const {data: chartData} = useFetch(url + `/${id}/market_chart?vs_currency=IDR&days=${day}`)
   const { data: coin, isPending, err } = useFetch(url + `/${id}`);
   const detail = coin && coin.market_data;
   const percentage =
@@ -19,14 +22,26 @@ const CoinDetail = ({ url }) => {
     Math.round(
       (detail.price_change_24h_in_currency.idr + Number.EPSILON) * 100
     ) / 100;
-
+  const setToYear = () => {
+    setDay(365)
+  }
+  const setToMonth = () => {
+    setDay(30)
+  }
+  const setToDay = () => {
+    setDay(1)
+  }
   return (
-    <div>
+    <div className="coin-detail">
       {isPending && <div>Loading....</div>}
       {err && <div>{err}</div>}
       {coin && (
         <div className="detail">
-          <LineChart chartData={chartData}/>
+          {chartData && <LineChart chartData={chartData} day={day}/>}
+          <ButtonTime 
+              setToYear={setToYear}
+              setToMonth={setToMonth}
+              setToDay={setToDay}/>
           <div className="wrapper">
             <div className="left">
               <img src={coin.image.large} alt="coin-img" />
@@ -52,6 +67,7 @@ const CoinDetail = ({ url }) => {
                 <button className="buy">Buy</button>
                 <button className="sell">Sell</button>
               </div>
+              
             </div>
           </div>
         </div>

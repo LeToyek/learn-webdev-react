@@ -1,12 +1,12 @@
 import React from "react";
-import Main from "./components/Main";
+import Main from "./Pages/Main";
 import Navbar from "./components/Navbar";
 import useFetch from "./custom_hook";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.scss";
 
-import CoinDetail from "./components/CoinDetail";
-import Register from "./components/Register";
+import CoinDetail from "./Pages/CoinDetail";
+import Register from "./Pages/Register";
 
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
