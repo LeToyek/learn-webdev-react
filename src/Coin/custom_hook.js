@@ -6,21 +6,25 @@ const useFetch = (url) => {
   const [err, setErr] = useState(null);
 
   useEffect(() => {
-    const abortCon = new AbortController();
+    const controller = new AbortController();
     const fetchCoinData = async () => {
-      const raw = await fetch(url, { signal: abortCon.signal });
+      const raw = await fetch(url,{signal: controller.signal});
+      if (!raw.ok) {
+        throw new Error('fetch error')
+      }
       const data = await raw.json();
       return data;
     };
     const populateData = async () => {
       const result = await fetchCoinData();
       setData(result);
-      setIsPending(false);
+      
     };
 
     try {
-      setTimeout(() => {
+      setTimeout(()=> {
         populateData();
+        setIsPending(false);
       }, 0);
     } catch (e) {
       if (e.name === "AbortError") {
@@ -29,9 +33,10 @@ const useFetch = (url) => {
         console.log(e);
         setIsPending(false);
         setErr(e);
+        return ()=> controller.abort()
       }
     }
-    return ()=> abortCon.abort()
+    
     // fetchData()
     // fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     //   .then(res => {
