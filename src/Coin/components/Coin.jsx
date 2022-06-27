@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Coin = ({
   id,
   name,
+  symbol,
   image,
   current_price,
   price_change_percentage_24h,
@@ -20,11 +21,14 @@ const Coin = ({
       >
         <div className="container">
           <div className="title">
-            <h1>{name}</h1>
             <img src={image} alt="" />
+            <div className="symbol">
+              <h1>{symbol}</h1>
+              <h5>{name}</h5>
+            </div>
           </div>
           <div className="data">
-            <p className="price">Rp.{current_price}</p>
+            <p className="price">Rp {current_price}</p>
             <div className="percentage">
               {priceChange > 0 ? (
                 <p className="coin-green">+{priceChange}%</p>
@@ -32,8 +36,8 @@ const Coin = ({
                 <p className="coin-red">{priceChange}%</p>
               )}
             </div>
-            
-            <p className="marketcap">{market_cap}</p>
+
+            <p className="marketcap">${(market_cap/1000000).toFixed(3)}M</p>
             <div className="rank">{market_cap_rank}</div>
           </div>
         </div>
