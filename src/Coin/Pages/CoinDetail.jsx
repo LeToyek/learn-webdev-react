@@ -37,7 +37,7 @@ const CoinDetail = ({ url }) => {
       {err && <div>{err}</div>}
       {coin && (
         <div className="detail">
-          {chartData && <LineChart chartData={chartData} day={day} isShow={true} height={400} isDown={percentage < 0 ? true : false}/>}
+          {chartData && <LineChart chartData={chartData} day={day} isDown={percentage < 0 ? true : false}/>}
           <ButtonTime 
               setToYear={setToYear}
               setToMonth={setToMonth}
@@ -52,7 +52,7 @@ const CoinDetail = ({ url }) => {
             </div>
             <div className="right">
               <div className="price">
-                <h2>Rp {detail.current_price.idr}</h2>
+                <h2>Rp {detail.current_price.idr.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h2>
                 <div className="detail">
                   <h3>{priceChange}</h3>
                   {percentage > 0 ? (

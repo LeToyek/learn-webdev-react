@@ -10,7 +10,9 @@ const Navbar = () => {
       <div className="right">
         <ul className="menu">
           <li>
-            <NavLink exact to="/">Home</NavLink>
+            <NavLink 
+            activeStyle={{backgroundColor: 'red'}}
+            exact to="/">Home</NavLink>
           </li>
           <li>
             <Link to="/menu">Menu</Link>

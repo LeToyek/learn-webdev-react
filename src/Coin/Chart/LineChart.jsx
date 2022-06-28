@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const LineChart = ({ chartData, day, isShow, height,isDown }) => {
+const LineChart = ({ chartData, day,isDown }) => {
   const historicalData = chartData.prices;
   var data = {
     labels: historicalData.map((c) => {
@@ -44,24 +44,11 @@ const LineChart = ({ chartData, day, isShow, height,isDown }) => {
     ],
   };
   var options = {
-    plugins: {
-      legend: {
-        display: isShow,
-      },
-    },
     responsive: true,
     maintainAspectRatio: false,
     elements: {
       point: {
         radius: 0,
-      },
-    },
-    scales: {
-      x: {
-        display: isShow,
-      },
-      y: {
-        display: isShow,
       },
     },
 
@@ -73,7 +60,7 @@ const LineChart = ({ chartData, day, isShow, height,isDown }) => {
   };
   return (
     <div>
-      <Line data={data} height={height} options={options}/>
+      <Line data={data} height={400} options={options}/>
     </div>
   );
 };
