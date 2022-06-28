@@ -11,11 +11,13 @@ const Navbar = () => {
         <ul className="menu">
           <li>
             <NavLink 
-            activeStyle={{backgroundColor: 'red'}}
+            activeStyle={{backgroundColor: '#3a4750'}}
             exact to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/menu">Menu</Link>
+            <NavLink 
+              activeStyle={{backgroundColor: '#3a4750'}}
+              to="/market">Market</NavLink>
           </li>
           <li>
             <Link to="/contact">Contact</Link>

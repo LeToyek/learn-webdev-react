@@ -7,31 +7,42 @@ import "./style.scss";
 
 import CoinDetail from "./Pages/CoinDetail";
 import Register from "./Pages/Register";
+import { useState } from "react";
 
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
   const url =
     baseUrl +
-    "/markets?vs_currency=IDR&order=market_cap_desc&per_page=10&page=1&sparkline=false";
+    "/markets?vs_currency=IDR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
+  const [searchResult, setSearchResult] = useState([]);
+  const searchCoin = (value) => {
+    console.log(value);
+    if (value !== null) {
+      const result = coins.filter((c) => c.name.toLowerCase() === value.toLowerCase());
+      console.log(result)
+      setSearchResult(result);
+      console.log("first")
+    }
+  };
   return (
     <Router>
       <div className="App">
-      <Navbar />
+        <Navbar />
         <div className="content">
           <Switch>
             <Route path="/register">
               <Register />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/"></Route>
+            <Route path="/market">
               {err && <div>{err}</div>}
               {isPending && <div>Loading.....</div>}
-              <Main coins={coins} />
+              <Main coins={searchResult.length > 0 ? searchResult :coins} onSearch={searchCoin} />
             </Route>
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
             </Route>
-            
           </Switch>
         </div>
       </div>
