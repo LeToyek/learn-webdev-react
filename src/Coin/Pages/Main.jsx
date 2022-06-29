@@ -1,38 +1,48 @@
 import React from "react";
-import ReactElasticCarousel from "react-elastic-carousel";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import Coin from "../components/Coin";
 import Jumbotron from "../components/Jumbotron";
 import SearchBar from "../components/SearchBar";
 import TableHead from "../components/TableHead";
-const Main = ({ coins, onSearch }) => {
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-    { width: 850, itemsToShow: 3 },
-    { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
-    { width: 1450, itemsToShow: 5 },
-    { width: 1750, itemsToShow: 6 },
-  ];
-  const slideCoin = coins && coins.slice(0, 10);
-
+const Main = ({ coins, slideCoin, onSearch }) => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <div className="main">
       <div className="jumbotron">
         <div className="cards">
-          <ReactElasticCarousel
-            breakPoints={breakPoints}
-            enableAutoPlay={true}
-            enableSwipe={true}
+          <Carousel
+            containerClass="carousel-container"
+            responsive={responsive}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={2000}
+            showDots={true}
+            dotListClass="dots"
+            removeArrowOnDeviceType={['mobile','tablet','desktop']}
           >
-            {/* <Slider dots
-          slidesToShow ={4}
-          autoplay = {true}
-
-          > */}
-            {slideCoin &&
-              slideCoin.map((c) => <Jumbotron key={c.id} id={c.id} {...c} />)}
-            {/* </Slider> */}
-          </ReactElasticCarousel>
+            {!!slideCoin && slideCoin.map((c) => (
+              <Jumbotron key={c.id} id={c.id} {...c} />
+            ))}
+          </Carousel>
         </div>
         <div className="buttons"></div>
       </div>

@@ -8,6 +8,7 @@ import "./style.scss";
 import CoinDetail from "./Pages/CoinDetail";
 import Register from "./Pages/Register";
 import { useState } from "react";
+import Dashboard from "./Pages/Dashboard";
 
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
@@ -19,10 +20,12 @@ const RestaurantApp = () => {
   const searchCoin = (value) => {
     console.log(value);
     if (value !== null) {
-      const result = coins.filter((c) => c.name.toLowerCase() === value.toLowerCase());
-      console.log(result)
+      const result = coins.filter(
+        (c) => c.name.toLowerCase() === value.toLowerCase()
+      );
+      console.log(result);
       setSearchResult(result);
-      console.log("first")
+      console.log("first");
     }
   };
   return (
@@ -38,10 +41,17 @@ const RestaurantApp = () => {
             <Route path="/market">
               {err && <div>{err}</div>}
               {isPending && <div>Loading.....</div>}
-              <Main coins={searchResult.length > 0 ? searchResult :coins} onSearch={searchCoin} />
+              <Main
+                coins={coins && searchResult.length > 0 ? searchResult : coins}
+                slideCoin={coins && coins.slice(0, 10)}
+                onSearch={searchCoin}
+              />
             </Route>
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard/>
             </Route>
           </Switch>
         </div>

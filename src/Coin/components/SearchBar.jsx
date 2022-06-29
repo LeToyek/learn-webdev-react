@@ -8,7 +8,12 @@ const SearchBar = ({onSearch}) => {
       <input
       placeholder="Search"
         type="text"
-        onChange={(e) => setWords(e.target.value)}
+        onChange={(e) => {
+          setWords(e.target.value)
+          if (e.key === "Enter") {
+            onSearch(words)
+          }
+        }}
         value={words}
       />
       <button onClick={()=>onSearch(words)}>

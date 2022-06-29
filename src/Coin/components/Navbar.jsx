@@ -5,18 +5,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="left">
-        <h1>Beli Coin</h1>
+        <h1>Coin Batam</h1>
       </div>
-      <div className="right">
+      <div className="mid">
         <ul className="menu">
           <li>
             <NavLink 
-            activeStyle={{backgroundColor: '#3a4750'}}
             exact to="/">Home</NavLink>
           </li>
           <li>
             <NavLink 
-              activeStyle={{backgroundColor: '#3a4750'}}
               to="/market">Market</NavLink>
           </li>
           <li>
@@ -27,8 +25,18 @@ const Navbar = () => {
               <div>Register</div>
             </Link>
           </li>
+          <li>
+            
+          </li>
         </ul>
+        
       </div>
+      <div className="right">
+        <NavLink to="/dashboard">
+        Dashboard
+        </NavLink>
+          
+        </div>
     </div>
   );
 };

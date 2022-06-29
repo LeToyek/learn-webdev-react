@@ -5,15 +5,145 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .doughnut{
+    height: 100;
+  }
+  .content {
+    height: 100%;
+    .dashboard {
+      height: 100%;
+      background-color: #f6fbf4;
+      display: flex;
+      .Nav {
+        height: 100%;
+        width: 20%;
+        .left {
+          min-height: 100%;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          hr {
+            margin: 0px 24px;
+          }
+          li {
+            a {
+              text-decoration: none;
+              color: #3a4750;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              padding: 8px 24px;
+              border-left: 4px solid transparent;
+              transition: 0.2s ease;
+              &:hover {
+                background-color: inherit;
+                border-left: 4px solid rgba(14, 174, 87, 1);
+                color: rgba(14, 174, 87, 1);
+              }
+            }
+            h4 {
+              margin-left: 8px;
+            }
+          }
+          .top {
+            margin-top: 24px;
+          }
+          .bottom {
+            margin-bottom: 24px;
+
+            .logout {
+              li a {
+                color: red;
+                &:hover {
+                  color: red;
+                  border-left-color: red;
+                }
+              }
+            }
+          }
+        }
+      }
+      .beranda {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        .card {
+          height: 100%;
+          border-radius: 12px;
+          background-color: white;
+          padding: 8px 16px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        h4{
+          margin-bottom: 4px;
+        }
+        h1 {
+          flex: 1;
+          margin-bottom: 8px;
+        }
+        .balance {
+          flex: 4;
+          margin-bottom: 8px;
+          display: flex;
+          .wallet {
+            flex: 3;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+          }
+          .totalBuy {
+            flex: 1;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+          }
+          .totalSell {
+            flex: 1;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+        .assets {
+          flex: 4;
+          display: flex;
+          .pie {
+
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+          }
+          .details {
+
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}
 .navbar {
-  padding-left: 24px;
-  background-color: rgba(14, 174, 87, 1);
+  flex: 1;
+  padding: 16px 24px;
+  height: auto;
+  background-color: white;
   align-items: center;
   display: flex;
   justify-content: space-between;
   .left {
     h1 {
-      color: white;
+      color: rgba(14, 174, 87, 1);
     }
   }
   .menu {
@@ -22,77 +152,81 @@ body {
     li {
       list-style-type: none;
       cursor: pointer;
+      padding: 0px 24px;
       a {
         display: block;
-
-        color: white;
+        color: rgba(14, 174, 87, 1);
+        font-weight: bold;
         text-decoration: none;
         transition: 0.6s ease;
-        padding: 24px;
-        &:hover {
-          background-color: #3a4750;
-        }
       }
     }
   }
+  .right {
+    font-weight: bold;
+    background-color: rgba(14, 174, 87, 1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }
+
 .Register {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
-    img {
-      height: 300px;
+    width: 25%;
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
-    .right {
-      width: 25%;
-      text-align: center;
-      .title {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-      h1 {
-        font-size: 60px;
-        font-family: "Rubik", sans-serif;
-        margin-bottom: 24px;
-        color: #3a4750;
-      }
-    }
-
-    h2 {
-      margin-bottom: 16px;
+    h1 {
+      font-size: 56px;
+      font-family: "Rubik", sans-serif;
       color: #3a4750;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      input {
-        border: 2px solid black;
-        border-radius: 8px;
-        padding: 16px;
-        margin-bottom: 16px;
-      }
+  }
 
-      button {
-        background-color: rgba(14, 174, 87, 1);
-        border: none;
-        border-radius: 16px;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 16px;
-      }
+  h2 {
+    margin-bottom: 16px;
+    color: #3a4750;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    input {
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 8px 16px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: rgba(14, 174, 87, 1);
+      border: none;
+      border-radius: 8px;
+      padding: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
     }
   }
 }
+
 .detail {
   height: 100%;
   .wrapper {
@@ -200,15 +334,16 @@ body {
 .rec.rec-arrow {
   visibility: hidden;
 }
-button.rec-dot{
+button.rec-dot {
   background-color: rgba(14, 174, 87, 1);
-
 }
-button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+button.rec-dot:hover,
+button.rec-dot:active,
+button.rec-dot:focus {
   box-shadow: 0 0 1px 3px rgba(16, 235, 49, 0.5);
 }
-button.rec-dot{
-  box-shadow: 0 0 1px 2px transparent
+button.rec-dot {
+  box-shadow: 0 0 1px 2px transparent;
 }
 .rec-carousel-item:focus {
   outline: none;
@@ -224,6 +359,21 @@ button.rec-dot{
     .cards {
       width: 100%;
       display: flex;
+      justify-content: center;
+      .carousel-container {
+        width: 90%;
+        margin-bottom: 24px;
+        cursor: move;
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+        &:active {
+          cursor: grabbing;
+          cursor: -moz-grabbing;
+          cursor: -webkit-grabbing;
+        }
+      }
+
       .card {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin: 24px 16px;
@@ -262,7 +412,7 @@ button.rec-dot{
       }
     }
   }
-  .recent{
+  .recent {
     color: #3a4750;
     width: 900px;
     display: flex;
@@ -319,8 +469,8 @@ button.rec-dot{
       height: 80px;
       border-bottom: 1px solid #d7d7d7;
       width: 900px;
-      transition: .5s ease;
-      &:hover{
+      transition: 0.5s ease;
+      &:hover {
         transform: scale(1.1);
       }
       .title {
@@ -373,31 +523,30 @@ button.rec-dot{
     }
   }
 }
-.search-bar{
+.search-bar {
   width: 900px;
   display: flex;
   overflow: hidden;
   margin: 16px 0px;
   border-radius: 16px;
   border: 1px solid rgba(14, 174, 87, 1);
-  transition: .2s ease;
-  &:hover{
+  transition: 0.2s ease;
+  &:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  input{
+  input {
     flex: 1;
     border: none;
     outline: none;
     padding: 8px 16px;
     font-size: 16px;
-
   }
-  button{
+  button {
     cursor: pointer;
     border: none;
     background-color: rgba(14, 174, 87, 1);
     padding: 8px 16px;
-    .icon{
+    .icon {
       color: white;
     }
   }

@@ -13,10 +13,8 @@ const Register = () => {
   return (
     <div className="Register">
       <div className="wrapper">
-        <img src={require("../assets/register.png")} alt="My SVG" />
-        <div className="right">
           <div className="title">
-            <h1>Beli Coin</h1>
+            <h1>Coin Batam</h1>
           </div>
           <h2>Register</h2>
           <form onSubmit={addUser}>
@@ -44,7 +42,6 @@ const Register = () => {
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
