@@ -1,5 +1,6 @@
 import React from "react";
 import DoughnutChart from "../../Chart/DoughnutChart";
+import Assets from "../../components/Assets";
 
 const Beranda = () => {
   return (
@@ -30,7 +31,13 @@ const Beranda = () => {
         </div>
         <div className="details">
           <h4>Assets</h4>
-          <div className="card">asdasd</div>
+          <div className="card">
+            <Assets/>
+          </div>
+        </div>
+        <div className="history">
+          <h4>Recent Activity</h4>
+          <div className="card"></div>
         </div>
       </div>
     </div>

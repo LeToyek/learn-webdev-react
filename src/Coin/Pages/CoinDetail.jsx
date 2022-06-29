@@ -37,6 +37,8 @@ const CoinDetail = ({ url }) => {
       {err && <div>{err}</div>}
       {coin && (
         <div className="detail">
+          <div className="price">
+          </div>
           {chartData && <LineChart chartData={chartData} day={day} isDown={percentage < 0 ? true : false}/>}
           <ButtonTime 
               setToYear={setToYear}

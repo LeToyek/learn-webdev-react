@@ -9,9 +9,6 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  .doughnut{
-    height: 100;
-  }
   .content {
     height: 100%;
     .dashboard {
@@ -85,6 +82,7 @@ body {
           margin-bottom: 4px;
         }
         h1 {
+          color: rgba(14, 174, 87, 1) ;
           flex: 1;
           margin-bottom: 8px;
         }
@@ -92,6 +90,7 @@ body {
           flex: 4;
           margin-bottom: 8px;
           display: flex;
+          color: #3a4750;
           .wallet {
             flex: 3;
             padding: 8px;
@@ -114,16 +113,56 @@ body {
         .assets {
           flex: 4;
           display: flex;
+          color: #3a4750;
           .pie {
-
             flex: 1;
             display: flex;
             flex-direction: column;
             padding: 8px;
+            .card{
+              display: flex;
+              align-items: center;
+            }
           }
           .details {
-
             flex: 4;
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            .assets-coin{
+
+              display: flex;
+              flex-direction: column;
+              .head-a{
+                display: flex;
+                .currency{
+                  flex: 2;
+                }
+                .cr-price{
+                  flex: 1;
+                }
+                .change{
+                  flex: 1;
+                }
+              }
+              .body-a{
+                display: flex;
+                .idc{
+                  align-items: center;
+                  flex: 2;
+                  display: flex;
+                }
+                .coin-price{
+                  flex: 1;
+                }
+                .coin-change{
+                  flex: 1;
+                }
+              }
+            }
+          }
+          .history{
+            flex: 3;
             display: flex;
             flex-direction: column;
             padding: 8px;
@@ -226,7 +265,6 @@ body {
     }
   }
 }
-
 .detail {
   height: 100%;
   .wrapper {
@@ -314,19 +352,21 @@ body {
   justify-content: center;
   .density {
     display: flex;
-    width: 300px;
+    width: 100%;
     justify-content: space-around;
     button {
+      cursor: pointer;
       padding: 12px 0px;
-      width: 80px;
-      border: none;
+      width: 400px;
+      border: 1px solid rgba(14, 174, 87, 1);
       border-radius: 12px;
-      color: white;
+      color: rgba(14, 174, 87, 1);
       font-weight: bold;
-      background-color: #3a4750;
+      background-color: white;
       transition: 0.2s ease;
       &:hover {
-        background-color: #9eb23b;
+        color: white;
+        background-color: rgba(14, 174, 87, 1);
       }
     }
   }

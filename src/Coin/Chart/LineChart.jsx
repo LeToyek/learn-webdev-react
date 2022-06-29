@@ -53,6 +53,7 @@ const LineChart = ({ chartData, day,isDown }) => {
     },
 
     legend: {
+      display: false,
       labels: {
         fontSize: 25,
       },
