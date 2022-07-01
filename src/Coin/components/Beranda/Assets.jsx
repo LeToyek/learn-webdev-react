@@ -17,6 +17,7 @@ const Assets = () => {
         </div>
         <h5 className="coin-price">400000IDR</h5>
         <h5 className="coin-change">5.1%</h5>
+        
       </div>
     </div>
   );

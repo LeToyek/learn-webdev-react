@@ -11,7 +11,7 @@ const DoughnutChart = () => {
       {
         label: `Coins Available`,
         data: [1, 2, 3, 4],
-        backgroundColor: ["#14C38E", "#30AADD", "#C67ACE", "#F37121"],
+        backgroundColor: ["#00AF91", "#007965", "#F58634", "#FFCC29","#3797A4","#8BCDCD","#CEE397","#FCF876"],
         borderWidth: 1,
       },
     ],

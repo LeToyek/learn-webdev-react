@@ -78,11 +78,11 @@ body {
           padding: 8px 16px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
-        h4{
+        h4 {
           margin-bottom: 4px;
         }
         h1 {
-          color: rgba(14, 174, 87, 1) ;
+          color: rgba(14, 174, 87, 1);
           flex: 1;
           margin-bottom: 8px;
         }
@@ -96,15 +96,20 @@ body {
             padding: 8px;
             display: flex;
             flex-direction: column;
+            h1 {
+              color: #3a4750;
+            }
+          }
+          .card {
           }
           .totalBuy {
-            flex: 1;
+            flex: 2;
             padding: 8px;
             display: flex;
             flex-direction: column;
           }
           .totalSell {
-            flex: 1;
+            flex: 2;
             padding: 8px;
             display: flex;
             flex-direction: column;
@@ -119,7 +124,7 @@ body {
             display: flex;
             flex-direction: column;
             padding: 8px;
-            .card{
+            .card {
               display: flex;
               align-items: center;
             }
@@ -129,43 +134,84 @@ body {
             display: flex;
             flex-direction: column;
             padding: 8px;
-            .assets-coin{
-
+            .assets-coin {
               display: flex;
               flex-direction: column;
-              .head-a{
+              .head-a {
                 display: flex;
-                .currency{
+                .currency {
+                  flex: 3;
+                }
+                .cr-price {
+                  flex: 3;
+                }
+                .change {
                   flex: 2;
-                }
-                .cr-price{
-                  flex: 1;
-                }
-                .change{
-                  flex: 1;
                 }
               }
-              .body-a{
+              hr {
+                margin: 8px 0;
+              }
+              .body-a {
                 display: flex;
-                .idc{
+                margin-bottom: 4px;
+                .idc {
                   align-items: center;
-                  flex: 2;
+                  flex: 3;
                   display: flex;
                 }
-                .coin-price{
-                  flex: 1;
+                .coin-price {
+                  flex: 3;
                 }
-                .coin-change{
-                  flex: 1;
+                .coin-change {
+                  flex: 2;
                 }
               }
             }
           }
-          .history{
-            flex: 3;
+          .recent-act {
+            flex: 4;
             display: flex;
             flex-direction: column;
             padding: 8px;
+            .head-a {
+              display: flex;
+              .currency {
+                flex: 1;
+              }
+              .cr-price {
+                flex: 1;
+              }
+              .change {
+                text-align: center;
+                flex: 1;
+              }
+            }
+            hr {
+              margin: 8px 0;
+            }
+            .body-a {
+              margin-bottom: 4px;
+              display: flex;
+              .idc {
+                align-items: center;
+                flex: 1;
+                display: flex;
+              }
+              .price {
+                flex: 1;
+              }
+              .act {
+                text-align: center;
+                flex: 1;
+                .act-buy{
+                  color: green;
+                }
+                .act-sell{
+                  color: red;
+                }
+              }
+            }
           }
         }
       }
