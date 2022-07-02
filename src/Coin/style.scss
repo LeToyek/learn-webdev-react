@@ -277,7 +277,7 @@ body {
       justify-content: center;
     }
     h1 {
-      font-size: 56px;
+      font-size: 48px;
       font-family: "Rubik", sans-serif;
       color: #3a4750;
     }
@@ -301,6 +301,7 @@ body {
 
     button {
       cursor: pointer;
+      outline: none;
       background-color: rgba(14, 174, 87, 1);
       border: none;
       border-radius: 8px;

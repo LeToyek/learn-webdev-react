@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 const Register = () => {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [phone, setPhone] = useState("")
   const [user, setUser] = useState(null);
+
+  const fetchUser = async () =>{
+    await fetch("http://localhost:5000/register/",{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(user)
+    })
+  }
+
   const addUser = (e) => {
     e.preventDefault();
-    setUser({ name: name, email: email, password: pass });
-    console.log(user);
+    setUser({ first_name: firstName,last_name: lastName, email: email, password: pass,phone });
+    fetchUser()
   };
 
   return (
@@ -20,9 +31,15 @@ const Register = () => {
           <form onSubmit={addUser}>
             <input
               type="text"
-              placeholder="Full name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <input
               type="email"
@@ -37,6 +54,12 @@ const Register = () => {
               placeholder="Password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
             <button className="submit">Create An Account</button>
           </form>
