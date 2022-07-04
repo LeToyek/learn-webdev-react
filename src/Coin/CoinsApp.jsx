@@ -11,6 +11,8 @@ import { useState } from "react";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import UseToken from "./UseToken";
+
 
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
@@ -19,6 +21,10 @@ const RestaurantApp = () => {
     "/markets?vs_currency=IDR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
   const [searchResult, setSearchResult] = useState([]);
+
+  const {token,setToken} = UseToken()
+
+
   const searchCoin = (value) => {
     console.log(value);
     if (value !== null) {
@@ -33,12 +39,13 @@ const RestaurantApp = () => {
       <div className="App">
         <Navbar />
         <div className="content">
+          {!token && <Login setToken={setToken}/>}
           <Switch>
             <Route path="/register">
               <Register />
             </Route>
             <Route path="/login">
-              <Login/>
+              <Login setToken={setToken}/>
             </Route>
             <Route exact path="/">
               <Home/>
