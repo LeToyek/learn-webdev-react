@@ -64,12 +64,13 @@ const CoinDetail = ({ url }) => {
                   <h4>Last Updated:</h4>
                   <h4 className="date">{coin.last_updated}</h4>
                 </div>
-                {/* <div className="buttons">
-                  <button className="buy">Buy</button>
-                  <button className="sell">Sell</button>
-                </div> */}
               </div>
             </div>
+            <ButtonTime
+              setToYear={setToYear}
+              setToMonth={setToMonth}
+              setToDay={setToDay}
+            />
             {chartData && (
               <LineChart
                 chartData={chartData}
@@ -77,11 +78,11 @@ const CoinDetail = ({ url }) => {
                 isDown={percentage < 0 ? true : false}
               />
             )}
-            <ButtonTime
-              setToYear={setToYear}
-              setToMonth={setToMonth}
-              setToDay={setToDay}
-            />
+            <div className="buttons">
+                  <button className="buy">Buy</button>
+                  <button className="sell">Sell</button>
+            </div>
+            
           </div>
         </div>
       )}
