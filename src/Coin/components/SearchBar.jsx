@@ -6,7 +6,7 @@ const SearchBar = ({onSearch}) => {
   return (
     <div className="search-bar">
       <input
-      placeholder="Search"
+      placeholder="ex = bitcoin, ethereum, etc"
         type="text"
         onChange={(e) => {
           setWords(e.target.value)

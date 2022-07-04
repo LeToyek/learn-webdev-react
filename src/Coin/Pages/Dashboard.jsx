@@ -14,7 +14,7 @@ const Dashboard = () => {
   <div className='dashboard'>
       <DashboardNav url={url}/>
       <Switch>
-        <Route exact path={`${path}/beranda`}>
+        <Route path={`${path}/beranda`}>
           <Beranda/>
         </Route>
         <Route path={`${path}/report`}>

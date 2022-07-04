@@ -37,7 +37,7 @@ const LineChart = ({ chartData, day,isDown }) => {
       {
         label: `Harga dalam ${day} hari terakhir`,
         data: historicalData.map((c) => c[1]),
-        borderColor: isDown?"#F32424":"#9EB23B",
+        borderColor: isDown?"#F32424":"green",
         tension: 0.05,
         fill: false,
       },

@@ -3,9 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Coin from "../components/Coin";
 import Jumbotron from "../components/Jumbotron";
+import Loading from "../components/Loading";
 import SearchBar from "../components/SearchBar";
 import TableHead from "../components/TableHead";
-const Main = ({ coins, slideCoin, onSearch }) => {
+const Main = ({ coins, slideCoin, onSearch,err,isPending }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -27,7 +28,15 @@ const Main = ({ coins, slideCoin, onSearch }) => {
   };
   return (
     <div className="main">
+      <div className="error">
+        {err && <h1>err</h1>}
+        
+      </div>
+      {isPending && <Loading/>}
       <div className="jumbotron">
+        <h1 className="top-ten">
+          Top ten coins based on rank
+        </h1>
         <div className="cards">
           <Carousel
             containerClass="carousel-container"
@@ -44,8 +53,10 @@ const Main = ({ coins, slideCoin, onSearch }) => {
             ))}
           </Carousel>
         </div>
-        <div className="buttons"></div>
       </div>
+      <h2 className="search-tag">
+        Search a coin
+      </h2>
       <SearchBar onSearch={onSearch} />
       <h4 className="recent">Recent</h4>
       <TableHead />

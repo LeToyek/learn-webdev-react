@@ -24,9 +24,7 @@ const RestaurantApp = () => {
       const result = coins.filter(
         (c) => c.name.toLowerCase() === value.toLowerCase()
       );
-      console.log(result);
       setSearchResult(result);
-      console.log("first");
     }
   };
   return (
@@ -42,12 +40,12 @@ const RestaurantApp = () => {
               <Home/>
             </Route>
             <Route path="/market">
-              {err && <div>{err}</div>}
-              {isPending && <div>Loading.....</div>}
               <Main
                 coins={coins && searchResult.length > 0 ? searchResult : coins}
                 slideCoin={coins && coins.slice(0, 10)}
                 onSearch={searchCoin}
+                err={err}
+                isPending={isPending}
               />
             </Route>
             <Route path="/coins/:id">
