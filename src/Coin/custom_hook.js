@@ -25,7 +25,7 @@ const useFetch = (url) => {
       setTimeout(()=> {
         populateData();
         setIsPending(false);
-      }, 0);
+      }, 1500);
     } catch (e) {
       if (e.name === "AbortError") {
         console.log("fetch aborted");

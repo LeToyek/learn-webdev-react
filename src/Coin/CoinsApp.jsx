@@ -9,6 +9,7 @@ import CoinDetail from "./Pages/CoinDetail";
 import Register from "./Pages/Register";
 import { useState } from "react";
 import Dashboard from "./Pages/Dashboard";
+import Home from "./Pages/Home";
 
 const RestaurantApp = () => {
   const baseUrl = "https://api.coingecko.com/api/v3/coins";
@@ -37,7 +38,9 @@ const RestaurantApp = () => {
             <Route path="/register">
               <Register />
             </Route>
-            <Route exact path="/"></Route>
+            <Route exact path="/">
+              <Home/>
+            </Route>
             <Route path="/market">
               {err && <div>{err}</div>}
               {isPending && <div>Loading.....</div>}

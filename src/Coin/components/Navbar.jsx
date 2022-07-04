@@ -18,11 +18,8 @@ const Navbar = () => {
               to="/market">Market</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/register">
-              <div>Register</div>
+            <Link to="/dashboard">
+              <div>Dashboard</div>
             </Link>
           </li>
           <li>
@@ -32,8 +29,8 @@ const Navbar = () => {
         
       </div>
       <div className="right">
-        <NavLink to="/dashboard">
-        Dashboard
+        <NavLink to="/register">
+        Register
         </NavLink>
           
         </div>
