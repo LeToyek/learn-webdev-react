@@ -3,11 +3,11 @@ import DoughnutChart from "../../Chart/DoughnutChart";
 import Assets from "../../components/Beranda/Assets";
 import History from "../../components/Beranda/History";
 
-const Beranda = () => {
+const Beranda = ({userName}) => {
   return (
     <div className="beranda">
       <div className="stats">
-        <h1>Crypto</h1>
+        <h1>{userName}</h1>
       </div>
       <div className="balance">
         <div className="wallet">

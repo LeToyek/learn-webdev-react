@@ -8,6 +8,9 @@ const useFetch = (url) => {
   useEffect(() => {
     const controller = new AbortController();
     const fetchCoinData = async () => {
+      if (!url){
+        return Promise.reject("endi url e blok? :)")
+      }
       const raw = await fetch(url,{signal: controller.signal});
       if (!raw.ok) {
         throw new Error('fetch error')

@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 
-
-const UseData = (token) => {
+const UseData = () => {
   const [userData, setUserData] = useState();
   useEffect(() => {
     const fetchData = async () => {
       const raw = await fetch("http://localhost:5000/dashboard", {
-        method: "POST",
+        method: "GET",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          token: token
-        }),
       });
       const data = await raw.json()
       data && setUserData(data)
