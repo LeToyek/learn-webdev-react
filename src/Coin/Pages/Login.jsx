@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Loading from "../components/Loading";
 
 const Login = ({setToken}) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+  const [error,setError] = useState("")
+  const history = useHistory()
 
   const fetchUser = async () =>{
     
@@ -18,9 +20,15 @@ const Login = ({setToken}) => {
       })
     })
     const data = await raw.json()
+    console.log(data);
+    if (data.statusError === true) {
+      setError(data.message)
+      setIsLoading(false)
+      return
+    }
     data && setToken(data)
     setIsLoading(false)
-    
+    history.push("/market")
     
   }
   const loginUser = (e) =>{
@@ -40,6 +48,7 @@ const Login = ({setToken}) => {
         {isLoading ? <Loading /> : null}
         <h1>Coin Batam</h1>
         <h2>Login</h2>
+        
         <form onSubmit={loginUser}>
           <input
             required
@@ -57,8 +66,10 @@ const Login = ({setToken}) => {
             value={pass}
             onChange={(e) => setPass(e.target.value)}
           />
+          {error && <h5>{error}</h5>}
           <button className="submit">Login</button>
         </form>
+        
       </div>
     </div>
   );

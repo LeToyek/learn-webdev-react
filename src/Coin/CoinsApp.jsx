@@ -12,6 +12,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import UseToken from "./UseToken";
+import UseData from "./UseData";
 
 
 const RestaurantApp = () => {
@@ -21,9 +22,9 @@ const RestaurantApp = () => {
     "/markets?vs_currency=IDR&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const { data: coins, isPending, err } = useFetch(url);
   const [searchResult, setSearchResult] = useState([]);
-
+  const [isLogin,setIsLogin] = useState()
   const {token,setToken} = UseToken()
-
+  const {userData} = UseData(token)
 
   const searchCoin = (value) => {
     console.log(value);
@@ -34,10 +35,15 @@ const RestaurantApp = () => {
       setSearchResult(result);
     }
   };
+
+  const name = userData && `${userData.first_name} ${userData.last_name}`
+  console.log(userData);
+
+  console.log(isLogin);
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar isLogin={isLogin } name={name} />
         <div className="content">
           {!token && <Login setToken={setToken}/>}
           <Switch>
@@ -63,7 +69,7 @@ const RestaurantApp = () => {
               <CoinDetail url={baseUrl} />
             </Route>
             <Route path="/dashboard">
-              <Dashboard/>
+              <Dashboard token={token}/>
             </Route>
           </Switch>
         </div>

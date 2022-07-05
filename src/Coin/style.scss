@@ -498,7 +498,6 @@ body {
       font-family: "Rubik", sans-serif;
       color: #3a4750;
     }
-
     h2 {
       margin-bottom: 16px;
       color: #3a4750;
@@ -513,6 +512,10 @@ body {
         padding: 8px 16px;
         margin-bottom: 16px;
         outline: none;
+      }
+      h5{
+        color: red;
+        margin-bottom: 8px;
       }
 
       button {
