@@ -12,20 +12,14 @@ const Beranda = ({userName}) => {
       <div className="balance">
         <div className="wallet">
           <div className="card">
-            <h4>Ballance</h4>
+            <h4>Current Ballance</h4>
             <h1>1,203,301,209 IDR</h1>
           </div>
         </div>
         <div className="totalBuy">
           <div className="card">
-            <h4>Total buy</h4>
+            <h4>Pofit</h4>
             <h2>1,203,301,209 IDR</h2>
-          </div>
-        </div>
-        <div className="totalSell">
-          <div className="card">
-            <h4>Total sell</h4>
-            <h2>132,203,301 IDR</h2>
           </div>
         </div>
       </div>

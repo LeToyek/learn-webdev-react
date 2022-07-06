@@ -19,6 +19,7 @@ const Login = ({setToken}) => {
         password: pass
       })
     })
+    
     const data = await raw.json()
     console.log(data);
     if (data.statusError === true) {

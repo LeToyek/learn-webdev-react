@@ -7,8 +7,9 @@ const Card = ({url,name,price,change}) => {
           <img src={url} alt="as" />
           <h5>{name.toUpperCase()}</h5>
         </div>
-        <h5 className="coin-price">{price}IDR</h5>
-        <h5 className="coin-change">{change}%</h5>
+        <h5 className="coin-price">{price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} IDR</h5>
+        {change > 0 ?<h5 className="c-green">{change.toFixed(2)} %</h5> :<h5 className="c-red">{change.toFixed(2)} %</h5> }
+        
       </div>
   )
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import useFetch from "../../custom_hook";
+import React from "react";
+import UseAssets from "../../UseAssets";
 import Card from "./card";
 
 const fooAssets = [
@@ -14,23 +14,7 @@ const fooAssets = [
 ];
 
 const Assets = () => {
-  const { data } = useFetch("https://api.coingecko.com/api/v3/coins");
-  const [dataAssets, setDataAssets] = useState([]);
-  useEffect(() => {
-    if (data) {
-      const result = fooAssets.map((foo) => {
-        const d = data.find((el) => el.symbol === foo.symbol);
-
-        return {
-          price: foo.price,
-          url: d.image.small,
-          name: d.symbol,
-          change: d.market_data.price_change_percentage_24h,
-        };
-      });
-      setDataAssets(result);
-    }
-  }, [data]);
+  const {dataAssets} = UseAssets(fooAssets)
   return (
     <div className="assets-coin">
       <div className="head-a">
