@@ -11,7 +11,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -21,23 +20,14 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const LineChart = ({ chartData, day,isDown }) => {
-  const historicalData = chartData.prices;
+const BLineChart = () => {
   var data = {
-    labels: historicalData.map((c) => {
-      let date = new Date(c[0]);
-      let time =
-        date.getHours() > 12
-          ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-          : `${12 - date.getHours()}:${date.getMinutes()} AM`;
-      return day === 1 ? time : date.toLocaleDateString();
-    }),
+    labels: [1,2,3,4,5,6],
     datasets: [
       {
-        label: `Harga dalam ${day} hari terakhir`,
-        data: historicalData.map((c) => c[1]),
-        borderColor: isDown?"#F32424":"green",
+        label: `Harga dalam hari terakhir`,
+        data: [1,2,3,4,4,5,6,5],
+        borderColor: "#F32424",
         tension: 0.05,
         fill: false,
       },
@@ -51,6 +41,7 @@ const LineChart = ({ chartData, day,isDown }) => {
         radius: 0,
       },
     },
+
     legend: {
       display: false,
       labels: {
@@ -65,4 +56,4 @@ const LineChart = ({ chartData, day,isDown }) => {
   );
 };
 
-export default LineChart;
+export default BLineChart;

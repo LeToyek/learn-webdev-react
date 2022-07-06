@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const UseData = () => {
+const UseData = ({url}) => {
   const [userData, setUserData] = useState();
   useEffect(() => {
     const fetchData = async () => {

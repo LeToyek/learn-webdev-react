@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
 
 const Navbar = () => {
   return (
@@ -26,8 +27,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right">
-        <NavLink to="/login" className="login">Login</NavLink>
-        <NavLink to="/register" className= "register">Register</NavLink>
+        <CircleNotificationsRoundedIcon className="notification" fontSize="large" />
+
+        <NavLink to="/login" className="login">
+          Login
+        </NavLink>
+        <NavLink to="/register" className="register">
+          Register
+        </NavLink>
       </div>
     </div>
   );

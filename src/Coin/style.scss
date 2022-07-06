@@ -126,7 +126,7 @@ body {
         padding: 16px;
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 80%;
         justify-content: space-between;
         .stats {
           h1 {
@@ -144,7 +144,7 @@ body {
           margin-bottom: 4px;
         }
         h1 {
-          color: rgba(14, 174, 87, 1);
+          color: #3a4750;
           flex: 1;
           margin-bottom: 8px;
         }
@@ -153,13 +153,34 @@ body {
           margin-bottom: 8px;
           display: flex;
           color: #3a4750;
+          .amount {
+            font-size: 32px;
+            color: #040405;
+          }
           .wallet {
             flex: 3;
             padding: 8px;
             display: flex;
             flex-direction: column;
-            h1 {
-              color: #3a4750;
+            
+            .card{
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              .detail-balance{
+                align-items: flex-end;
+                display: flex;
+                justify-content: space-between;
+                button{
+                  padding: 8px 16px;
+                  border: none;
+                  border-radius: 12px;
+                  font-weight: bold;
+                  color: white;
+                  background-color: #0eae57;
+                  cursor: pointer;
+                }
+              }
             }
           }
           .totalBuy {
@@ -167,12 +188,26 @@ body {
             padding: 8px;
             display: flex;
             flex-direction: column;
-          }
-          .totalSell {
-            flex: 2;
-            padding: 8px;
-            display: flex;
-            flex-direction: column;
+            .card{
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              
+              .b-last-up{
+                align-items: flex-end;
+                display: flex;
+                justify-content: space-between;
+                button{
+                  padding: 8px 16px;
+                  border: none;
+                  border-radius: 12px;
+                  font-weight: bold;
+                  color: white;
+                  background-color: #0eae57;
+                  cursor: pointer;
+                }
+              }
+            }
           }
         }
         .assets {
@@ -357,6 +392,13 @@ body {
     }
   }
   .right {
+    display: flex;
+    align-items: center;
+    .notification{
+      color: #0eae57;
+      margin-right: 16px;
+      cursor: pointer;
+    }
     a {
       text-decoration: none;
       font-weight: bold;

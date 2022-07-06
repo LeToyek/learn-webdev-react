@@ -3,23 +3,31 @@ import DoughnutChart from "../../Chart/DoughnutChart";
 import Assets from "../../components/Beranda/Assets";
 import History from "../../components/Beranda/History";
 
-const Beranda = ({userName}) => {
+const Beranda = () => {
   return (
     <div className="beranda">
       <div className="stats">
-        <h1>{userName}</h1>
+        <h1>Overview</h1>
       </div>
       <div className="balance">
         <div className="wallet">
           <div className="card">
             <h4>Current Ballance</h4>
-            <h1>1,203,301,209 IDR</h1>
+            <h2 className="amount">1,203,301,209 IDR</h2>
+            <div className="detail-balance">
+              <h6 className="b-last-up">Last Updated : 07-6-2022</h6>
+              <button>Manage</button>
+            </div>
           </div>
         </div>
         <div className="totalBuy">
           <div className="card">
-            <h4>Pofit</h4>
-            <h2>1,203,301,209 IDR</h2>
+            <h4>Profit</h4>
+            <h2 className="amount">1,300,000 IDR</h2>
+            <div className="b-last-up">
+              <h6>Last Updated : 07-6-2022</h6>
+              <button>Detail</button>
+            </div>
           </div>
         </div>
       </div>
