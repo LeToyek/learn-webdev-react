@@ -5,6 +5,9 @@ const TableHead = () => {
     <div className="head">
         <div className="wrapper">
           <h5 className="name">Coin</h5>
+          <div className="detail-phone">
+            <h5>Detail</h5>
+          </div>
           <div className="detail">
             <h5 className="price">Harga</h5>
             <h5 className="percentage">Persentase 24h</h5>

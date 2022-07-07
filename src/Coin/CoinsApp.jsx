@@ -40,7 +40,6 @@ const RestaurantApp = () => {
       <div className="App">
         <Navbar />
         <div className="content">
-          {!token && <Login setToken={setToken}/>}
           <Switch>
             <Route path="/register">
               <Register />
@@ -51,14 +50,14 @@ const RestaurantApp = () => {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path="/market">
-              <Main
-                coins={coins && searchResult.length > 0 ? searchResult : coins}
-                slideCoin={coins && coins.slice(0, 10)}
-                onSearch={searchCoin}
-                err={err}
-                isPending={isPending}
-              />
+            <Route path="/market" >
+                <Main
+                  coins={coins && searchResult.length > 0 ? searchResult : coins}
+                  slideCoin={coins && coins.slice(0, 10)}
+                  onSearch={searchCoin}
+                  err={err}
+                  isPending={isPending}
+                />
             </Route>
             <Route path="/coins/:id">
               <CoinDetail url={baseUrl} />
@@ -72,5 +71,13 @@ const RestaurantApp = () => {
     </Router>
   );
 };
+
+const PrivateRoute = ({token, path, children}) => {
+
+  return <Route path={path}>
+    {token ? children : <h1>Gabole masuk glob</h1>}
+  </Route>
+
+}
 
 export default RestaurantApp;

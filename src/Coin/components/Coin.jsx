@@ -27,6 +27,16 @@ const Coin = ({
               <h5>{name}</h5>
             </div>
           </div>
+          <div className="data-phone">
+          <p className="price">{current_price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} IDR</p>
+          <div className="percentage">
+              {priceChange > 0 ? (
+                <p className="coin-green">+{priceChange}%</p>
+              ) : (
+                <p className="coin-red">{priceChange}%</p>
+              )}
+            </div>
+          </div>
           <div className="data">
             <p className="price">{current_price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} IDR</p>
             <div className="percentage">

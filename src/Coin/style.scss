@@ -162,16 +162,16 @@ body {
             padding: 8px;
             display: flex;
             flex-direction: column;
-            
-            .card{
+
+            .card {
               display: flex;
               justify-content: space-between;
               flex-direction: column;
-              .detail-balance{
+              .detail-balance {
                 align-items: flex-end;
                 display: flex;
                 justify-content: space-between;
-                button{
+                button {
                   padding: 8px 16px;
                   border: none;
                   border-radius: 12px;
@@ -188,16 +188,16 @@ body {
             padding: 8px;
             display: flex;
             flex-direction: column;
-            .card{
+            .card {
               display: flex;
               justify-content: space-between;
               flex-direction: column;
-              
-              .b-last-up{
+
+              .b-last-up {
                 align-items: flex-end;
                 display: flex;
                 justify-content: space-between;
-                button{
+                button {
                   padding: 8px 16px;
                   border: none;
                   border-radius: 12px;
@@ -259,7 +259,7 @@ body {
                 overflow: auto;
                 -ms-overflow-style: none; /* Internet Explorer 10+ */
                 scrollbar-width: none;
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                   display: none;
                 }
               }
@@ -295,7 +295,7 @@ body {
             display: flex;
             flex-direction: column;
             padding: 8px;
-            .card{
+            .card {
               overflow: hidden;
             }
             .head-a {
@@ -314,7 +314,7 @@ body {
             hr {
               margin: 8px 0 0 0;
             }
-            .History{
+            .History {
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -323,7 +323,7 @@ body {
                 overflow: auto;
                 -ms-overflow-style: none; /* Internet Explorer 10+ */
                 scrollbar-width: none;
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                   display: none;
                 }
               }
@@ -332,7 +332,7 @@ body {
               margin-bottom: 8px;
               display: flex;
               align-items: center;
-              img{
+              img {
                 width: 24px;
                 margin-right: 16px;
               }
@@ -362,7 +362,6 @@ body {
   }
 }
 .navbar {
-  flex: 1;
   padding: 16px 24px;
   height: auto;
   background-color: white;
@@ -394,7 +393,7 @@ body {
   .right {
     display: flex;
     align-items: center;
-    .notification{
+    .notification {
       color: #0eae57;
       margin-right: 16px;
       cursor: pointer;
@@ -876,6 +875,9 @@ button.rec-dot {
         min-width: 250px;
         padding: 0px 24px;
       }
+      .detail-phone {
+        display: none;
+      }
       .detail {
         text-align: center;
         display: flex;
@@ -911,6 +913,9 @@ button.rec-dot {
       transition: 0.5s ease;
       &:hover {
         transform: scale(1.1);
+      }
+      .data-phone {
+        display: none;
       }
       .title {
         display: flex;
@@ -987,6 +992,156 @@ button.rec-dot {
     padding: 8px 16px;
     .icon {
       color: white;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    .right {
+      display: none;
+    }
+    .menu {
+    }
+  }
+  .homepage {
+    display: none;
+    padding: 0px 16px;
+    .left {
+      display: none;
+    }
+  }
+  .main {
+    .top-ten {
+      font-size: 32px;
+    }
+    .search-tag {
+      width: 100%;
+      padding-left: 16px;
+      font-size: 24px;
+    }
+    .recent{
+      width: 100%;
+      margin-left: 24px;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 0px 16px;
+      border: none;
+      input {
+        border: 1px solid #0eae57;
+        border-top-left-radius: 32px;
+        border-bottom-left-radius: 32px;
+      }
+      button {
+        border: 1px solid #0eae57;
+        border-top-right-radius: 32px;
+        border-bottom-right-radius: 32px;
+      }
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .head {
+      width: 100%;
+      .wrapper {
+        background-color: #0eae57;
+        width: 100%;
+        margin: 0 16px;
+        justify-content: space-around;
+        padding: 0px 24px;
+        .name {
+          min-width: 0;
+          padding: 0px;
+        }
+        .detail-phone {
+          display: contents;
+          background-color: red;
+        }
+        .detail {
+          display: none;
+        }
+      }
+    }
+    .coin {
+      width: 100%;
+      padding: 0px 16px;
+      display: flex;
+      justify-content: start;
+      .container {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        .data {
+          display: none;
+        }
+        .data-phone {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+          .price{
+            font-weight: 600;
+          }
+          .percentage {
+            flex: 5;
+            font-size: 16px;
+            .coin-red {
+              color: red;
+            }
+            .coin-green {
+              color: green;
+            }
+          }
+        }
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
+  .content{
+    .coin-detail{
+      .c-coin{
+        padding: 0px 24px;
+        .detail{
+          .wrapper{
+            .left{
+              img{
+                height: 125px;
+              }
+            }
+            .right{
+              .title{
+                margin-top: 0px;
+                h1{
+                  font-size: 24px;
+                }
+              }
+              .price{
+                margin: 8px 0px;
+                h2{
+                  font-size: 32px;
+                }
+                h3{
+                  font-size: 16px;
+                }
+              }
+              .lastupdate{
+                h4{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          .time{
+            .density{
+              button{
+                margin: 16px 8px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

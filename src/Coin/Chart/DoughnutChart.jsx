@@ -4,13 +4,13 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const DoughnutChart = () => {
+const DoughnutChart = ({fooAssets}) => {
   var data = {
-    labels: ["bitcoin","Ethereum","doge coin","USDC"],
+    labels: fooAssets.map(c => c.symbol.toUpperCase()),
     datasets: [
       {
         label: `Coins Available`,
-        data: [1, 2, 3, 4],
+        data: fooAssets.map(c => c.price),
         backgroundColor: ["#00AF91", "#007965", "#F58634", "#FFCC29","#3797A4","#8BCDCD","#CEE397","#FCF876"],
         borderWidth: 1,
       },
