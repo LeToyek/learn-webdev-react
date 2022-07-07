@@ -72,12 +72,12 @@ const RestaurantApp = () => {
   );
 };
 
-const PrivateRoute = ({token, path, children}) => {
+// const PrivateRoute = ({token, path, children}) => {
 
-  return <Route path={path}>
-    {token ? children : <h1>Gabole masuk glob</h1>}
-  </Route>
+//   return <Route path={path}>
+//     {token ? children : <h1>Gabole masuk glob</h1>}
+//   </Route>
 
-}
+// }
 
 export default RestaurantApp;

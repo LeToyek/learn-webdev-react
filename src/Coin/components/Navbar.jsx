@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import Burger from "./Burger";
 
 const Navbar = () => {
+  const [isClicked, setisClicked] = useState(false);
+
   return (
+    <>
     <div className="navbar">
       <div className="left">
         <h1>Coin Batam</h1>
       </div>
-      <div className="mid">
-        <ul className="menu">
-          <li>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/market">Market</NavLink>
-          </li>
-          <li>
-            <Link to="/dashboard">
-              <div>Dashboard</div>
-            </Link>
-          </li>
-          <li></li>
-        </ul>
-      </div>
+
+      <ul className="menu">
+        <li>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/market">Market</NavLink>
+        </li>
+        <li>
+          <Link to="/dashboard">
+            <div>Dashboard</div>
+          </Link>
+        </li>
+      </ul>
+      <button
+        onClick={() => {
+          setisClicked(!isClicked);
+        }}
+      >
+        <MenuOutlinedIcon className="hamburger" />
+      </button>
+      
+
       <div className="right">
-        <CircleNotificationsRoundedIcon className="notification" fontSize="large" />
+        <NotificationsNoneOutlinedIcon
+          className="notification"
+          fontSize="large"
+        />
 
         <NavLink to="/login" className="login">
           Login
@@ -36,7 +51,11 @@ const Navbar = () => {
           Register
         </NavLink>
       </div>
+      
     </div>
+    {isClicked ? <Burger/> : null}
+    </>
+    
   );
 };
 

@@ -9,7 +9,6 @@ const fooAssets = [
   { symbol: "usdt", price: 5000000 },
   { symbol: "usdc", price: 6000000 },
   { symbol: "bnb", price: 7000000 },
-  { symbol: "ada", price: 10000000 },
 ];
 const fooRecAct = [
   { symbol: "btc", price: 300000, activity: "BUY" },
@@ -19,7 +18,6 @@ const fooRecAct = [
   { symbol: "bnb", price: 700000, activity: "BUY" },
   { symbol: "btc", price: 800000, activity: "BUY" },
   { symbol: "xrp", price: 900000, activity: "SELL" },
-  { symbol: "ada", price: 1000000, activity: "BUY" },
 ];
 const Beranda = () => {
   return (

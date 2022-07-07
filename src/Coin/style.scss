@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   .content {
     height: 100%;
+
     .homepage {
       span {
         color: #0eae57;
@@ -155,7 +156,7 @@ body {
           color: #3a4750;
           .amount {
             font-size: 32px;
-            color: #040405;
+            color: #3a4750;
           }
           .wallet {
             flex: 3;
@@ -368,6 +369,10 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
+
+  .hamburger {
+    display: none;
+  }
   .left {
     h1 {
       color: rgba(14, 174, 87, 1);
@@ -995,21 +1000,52 @@ button.rec-dot {
     }
   }
 }
+
 @media screen and (max-width: 600px) {
+
+  .burgerr {
+    position: absolute;
+    margin-top: 64px;
+    transition:  .2s ease-out;
+    flex-direction: column;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    li {
+      list-style-type: none;
+      cursor: pointer;
+      text-align: center;
+      a {
+        width: 100%;
+        padding: 16px 0px;
+        display: block;
+        color: rgba(14, 174, 87, 1);
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.6s ease;
+      }
+    }
+  }
   .navbar {
     .right {
       display: none;
     }
     .menu {
-    }
-  }
-  .homepage {
-    display: none;
-    padding: 0px 16px;
-    .left {
       display: none;
     }
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      .hamburger {
+        display: block;
+        color: #0eae57;
+        font-weight: 900;
+      }
+    }
   }
+
   .main {
     .top-ten {
       font-size: 32px;
@@ -1019,7 +1055,7 @@ button.rec-dot {
       padding-left: 16px;
       font-size: 24px;
     }
-    .recent{
+    .recent {
       width: 100%;
       margin-left: 24px;
     }
@@ -1067,10 +1103,20 @@ button.rec-dot {
       padding: 0px 16px;
       display: flex;
       justify-content: start;
+      a {
+        width: 100%;
+        padding-right: 24px;
+        border-bottom: 1px solid #97a2a9;
+      }
       .container {
         width: 100%;
         flex: 1;
         display: flex;
+        border-bottom: none;
+        .title {
+          width: 200px;
+          min-width: 200px;
+        }
         .data {
           display: none;
         }
@@ -1079,7 +1125,7 @@ button.rec-dot {
           display: flex;
           flex-direction: column;
           text-align: end;
-          .price{
+          .price {
             font-weight: 600;
           }
           .percentage {
@@ -1099,44 +1145,114 @@ button.rec-dot {
       }
     }
   }
-  .content{
-    .coin-detail{
-      .c-coin{
+  .content {
+    .coin-detail {
+      .c-coin {
         padding: 0px 24px;
-        .detail{
-          .wrapper{
-            .left{
-              img{
+        .detail {
+          .wrapper {
+            .left {
+              img {
                 height: 125px;
               }
             }
-            .right{
-              .title{
+            .right {
+              .title {
                 margin-top: 0px;
-                h1{
+                h1 {
                   font-size: 24px;
                 }
               }
-              .price{
+              .price {
                 margin: 8px 0px;
-                h2{
+                h2 {
                   font-size: 32px;
                 }
-                h3{
+                h3 {
                   font-size: 16px;
                 }
               }
-              .lastupdate{
-                h4{
+              .lastupdate {
+                h4 {
                   font-size: 12px;
                 }
               }
             }
           }
-          .time{
-            .density{
-              button{
+          .time {
+            .density {
+              button {
                 margin: 16px 8px;
+                &::marker {
+                  background-color: #0eae57;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .App {
+    .content {
+      .dashboard {
+        display: flex;
+        overflow: scroll;
+        .Nav {
+          width: 15%;
+          .left {
+            padding: 0px;
+            .top {
+              margin-top: 0;
+            }
+            h4 {
+              display: none;
+            }
+            li {
+              a {
+                padding: 16px 8px;
+                &:hover {
+                  border-left: 2px solid #0eae57;
+                }
+              }
+              .active {
+                border-left: 2px solid #0eae57;
+              }
+            }
+          }
+        }
+
+        .card {
+          min-height: 200px;
+          canvas {
+            width: 250px;
+          }
+        }
+        .beranda {
+          width: 100%;
+          overflow: scroll;
+          overflow-wrap: normal;
+          display: block;
+          -ms-overflow-style: none; /* Internet Explorer 10+ */
+          scrollbar-width: none;
+          .balance {
+            .amount {
+              font-size: 24px;
+            }
+          }
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .balance {
+            flex-direction: column;
+          }
+          .assets {
+            flex-direction: column;
+            .recent-act {
+              .body-a {
+                img {
+                  margin-right: 8px;
+                }
               }
             }
           }
