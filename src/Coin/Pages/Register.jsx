@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import SuccessDialog from "../components/SuccessDialog";
-import ReactSnackBar from "react-js-snackbar";
+// import ReactSnackBar from "react-js-snackbar";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -94,9 +94,9 @@ const Register = () => {
             <button className="guest">Login as Guest</button>
           </Link>
         </form>
-        <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+        {/* <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
           Server is being developed
-        </ReactSnackBar>
+        </ReactSnackBar> */}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import LineChart from "../Chart/LineChart";
 import ButtonTime from "../components/ButtonTime";
 import Loading from "../components/Loading";
 import useFetch from "../custom_hook";
-import ReactSnackBar from "react-js-snackbar";
+// import ReactSnackBar from "react-js-snackbar";
 
 const CoinDetail = ({ url }) => {
   const { id } = useParams();
@@ -92,9 +92,9 @@ const CoinDetail = ({ url }) => {
             </div>
             
           </div>
-          <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+          {/* <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
           Server is being developed
-        </ReactSnackBar>
+        </ReactSnackBar> */}
         </div>
         
       )}

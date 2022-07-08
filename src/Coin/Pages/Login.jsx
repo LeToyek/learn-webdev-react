@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Loading from "../components/Loading";
-import ReactSnackBar from "react-js-snackbar";
+// import ReactSnackBar from "react-js-snackbar";
 const Login = ({setToken}) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -81,9 +81,9 @@ const Login = ({setToken}) => {
             <button className="guest">Login as Guest</button>
           </Link>
         </form>
-        <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+        {/* <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
           Server is being developed
-        </ReactSnackBar>
+        </ReactSnackBar> */}
       </div>
     </div>
   );
