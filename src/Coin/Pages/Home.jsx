@@ -8,10 +8,7 @@ const Home = () => {
       <div className="left">
         <h1>Invest your <span>crypto</span>  easily</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eaque
-          eum consequuntur. Unde incidunt vel, hic nobis cumque rerum corporis
-          reiciendis dolores maiores facilis labore excepturi impedit esse eius
-          accusantium.
+          Buy and sell your crypto assets such as Bitcoin, Ethereum, and many more easily and safely. Join us now and achieve profit by trading with Coin Batam 
         </p>
         <Link to="/register">
           <button>Get Started</button>
