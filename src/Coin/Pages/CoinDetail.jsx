@@ -5,10 +5,12 @@ import LineChart from "../Chart/LineChart";
 import ButtonTime from "../components/ButtonTime";
 import Loading from "../components/Loading";
 import useFetch from "../custom_hook";
+import ReactSnackBar from "react-js-snackbar";
 
 const CoinDetail = ({ url }) => {
   const { id } = useParams();
   const [day, setDay] = useState(30);
+  const [isShow, setIsShow] = useState(false);
   const { data: chartData } = useFetch(
     url + `/${id}/market_chart?vs_currency=IDR&days=${day}`
   );
@@ -28,6 +30,12 @@ const CoinDetail = ({ url }) => {
   };
   const setToDay = () => {
     setDay(1);
+  };
+  const show = () => {
+    setIsShow(true);
+    setTimeout(() => {
+      setIsShow(false);
+    }, 2000);
   };
   return (
     <div className="coin-detail">
@@ -79,12 +87,16 @@ const CoinDetail = ({ url }) => {
               />
             )}
             <div className="buttons">
-                  <button className="buy">Buy</button>
-                  <button className="sell">Sell</button>
+                  <button className="buy" onClick={show}>Buy</button>
+                  <button className="sell" onClick={show}>Sell</button>
             </div>
             
           </div>
+          <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+          Server is being developed
+        </ReactSnackBar>
         </div>
+        
       )}
     </div>
   );

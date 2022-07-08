@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Loading from "../components/Loading";
-
+import ReactSnackBar from "react-js-snackbar";
 const Login = ({setToken}) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isShow, setIsShow] = useState(false);
   const [error,setError] = useState("")
   const history = useHistory()
 
@@ -32,6 +33,13 @@ const Login = ({setToken}) => {
     history.push("/market")
     
   }
+  const show = (e) => {
+    e.preventDefault()
+    setIsShow(true);
+    setTimeout(() => {
+      setIsShow(false);
+    }, 2000);
+  };
   const loginUser = (e) =>{
     e.preventDefault()
     setIsLoading(true)
@@ -50,7 +58,7 @@ const Login = ({setToken}) => {
         <h1>Coin Batam</h1>
         <h2>Login</h2>
         
-        <form onSubmit={loginUser}>
+        <form>
           <input
             required
             type="email"
@@ -68,9 +76,14 @@ const Login = ({setToken}) => {
             onChange={(e) => setPass(e.target.value)}
           />
           {error && <h5>{error}</h5>}
-          <button className="submit">Login</button>
+          <button className="submit" onClick={show}>Login</button>
+          <Link to="/market">
+            <button className="guest">Login as Guest</button>
+          </Link>
         </form>
-        
+        <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+          Server is being developed
+        </ReactSnackBar>
       </div>
     </div>
   );

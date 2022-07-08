@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 import SuccessDialog from "../components/SuccessDialog";
+import ReactSnackBar from "react-js-snackbar";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -9,7 +11,7 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
+  const [isShow, setIsShow] = useState(false);
   const fetchUser = async () => {
     await fetch("http://localhost:5000/register", {
       method: "POST",
@@ -33,40 +35,40 @@ const Register = () => {
       setTimeout(() => {
         fetchUser();
       }, 1500);
-      
     } catch (error) {
       console.log(error);
     }
   };
-
+  const show = (e) => {
+    e.preventDefault()
+    setIsShow(true);
+    setTimeout(() => {
+      setIsShow(false);
+    }, 2000);
+  };
   return (
     <div className="Register">
       <div className="wrapper">
         {isLoading ? <Loading /> : null}
-        {isSuccess ? (
-            <SuccessDialog />
-        ) : null}
+        {isSuccess ? <SuccessDialog /> : null}
         <div className="title">
           <h1>Coin Batam</h1>
         </div>
         <h2>Register</h2>
-        <form onSubmit={addUser}>
+        <form>
           <input
-            required
             type="text"
             placeholder="First Name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
-            required
             type="text"
             placeholder="Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
-            required
             type="email"
             className="email"
             placeholder="Email"
@@ -74,7 +76,6 @@ const Register = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            required
             type="password"
             className="password"
             placeholder="Password"
@@ -82,14 +83,20 @@ const Register = () => {
             onChange={(e) => setPass(e.target.value)}
           />
           <input
-            required
             type="text"
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <button className="submit">Create An Account</button>
+          <button className="submit" onClick={show}>Create An Account</button>
+
+          <Link to="/market">
+            <button className="guest">Login as Guest</button>
+          </Link>
         </form>
+        <ReactSnackBar Icon={<span>🦄</span>} Show={isShow}>
+          Server is being developed
+        </ReactSnackBar>
       </div>
     </div>
   );

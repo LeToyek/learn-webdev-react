@@ -5,15 +5,15 @@ const Burger = () => {
   return (
     <>
       <ul className="burgerr">
-        <li>
-          <NavLink exact to="/">
+        <li >
+          <NavLink exact to="/" >
             Home
           </NavLink>
         </li>
-        <li>
+        <li >
           <NavLink to="/market">Market</NavLink>
         </li>
-        <li>
+        <li >
           <NavLink to="/dashboard">
             Dashboard
           </NavLink>

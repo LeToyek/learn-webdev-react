@@ -13,8 +13,8 @@ const History = ({fooRecAct}) => {
       </div>
       <hr />
       <div className="activities">
-        {dataAssets.map((c) => (
-          <HCard key={c.id} id={c.id} {...c} />
+        {dataAssets.map((c,index) => (
+          <HCard key={index} id={index} {...c} />
         ))}
       </div>
     </div>

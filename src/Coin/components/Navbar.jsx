@@ -30,6 +30,7 @@ const Navbar = () => {
         </li>
       </ul>
       <button
+      className="navBur"
         onClick={() => {
           setisClicked(!isClicked);
         }}
